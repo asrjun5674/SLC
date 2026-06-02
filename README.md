@@ -1,15 +1,15 @@
 
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SLC | Shree Lakshmi & Co</title>
 
-<meta name="description"
-content="SLC - Shree Lakshmi & Co Modern Iron & Steel Business Website">
+<meta name="description" content="Shree Lakshmi & Co - Modern Iron & Steel Solutions">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -27,29 +27,21 @@ color:white;
 overflow-x:hidden;
 }
 
-/* VIDEO BACKGROUND */
+/* BACKGROUND */
 
-#bgvideo{
-position:fixed;
-right:0;
-bottom:0;
-min-width:100%;
-min-height:100%;
-object-fit:cover;
-z-index:-2;
-filter:brightness(0.25);
-}
-
-.overlay{
+body::before{
+content:"";
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:linear-gradient(to bottom,
-rgba(0,0,0,0.5),
-rgba(60,0,0,0.7));
-z-index:-1;
+background:
+linear-gradient(rgba(0,0,0,0.82),rgba(40,0,0,0.88)),
+url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-2;
 }
 
 /* HEADER */
@@ -63,25 +55,30 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.5);
+background:rgba(0,0,0,0.45);
 backdrop-filter:blur(12px);
 z-index:1000;
+border-bottom:1px solid rgba(255,204,0,0.2);
 }
 
 .logo{
-font-size:42px;
-font-weight:700;
+font-size:44px;
+font-weight:800;
 color:#ffcc00;
+letter-spacing:2px;
 text-shadow:
 0 0 10px #ffcc00,
-0 0 20px red,
-0 0 40px red;
+0 0 25px red;
+}
+
+nav{
+display:flex;
+gap:25px;
 }
 
 nav a{
 text-decoration:none;
 color:white;
-margin-left:25px;
 font-weight:600;
 transition:0.3s;
 }
@@ -93,18 +90,20 @@ color:#ffcc00;
 /* HERO */
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:140px 20px 60px;
 }
 
 .hero h1{
-font-size:90px;
+font-size:92px;
+font-weight:800;
 color:#ffcc00;
+line-height:1.1;
 text-shadow:
 0 0 20px #ffcc00,
 0 0 40px red;
@@ -118,62 +117,78 @@ transform:translateY(-10px);
 }
 
 .hero p{
+margin-top:25px;
 font-size:24px;
-margin-top:20px;
-max-width:800px;
-line-height:1.7;
+max-width:850px;
+line-height:1.8;
+color:#ddd;
 }
 
 /* SEARCH */
 
-.search-box{
-margin-top:35px;
+.search-container{
+margin-top:45px;
+width:100%;
 display:flex;
-gap:10px;
-flex-wrap:wrap;
 justify-content:center;
 }
 
+.search-box{
+width:100%;
+max-width:820px;
+display:flex;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:60px;
+padding:10px;
+box-shadow:0 0 25px rgba(255,0,0,0.25);
+}
+
 .search-box input{
+flex:1;
 padding:18px 22px;
-width:340px;
 border:none;
-border-radius:50px;
 outline:none;
-font-size:17px;
+background:transparent;
+color:white;
+font-size:18px;
+}
+
+.search-box input::placeholder{
+color:#ccc;
 }
 
 .search-box button{
-padding:18px 28px;
+padding:18px 34px;
 border:none;
 border-radius:50px;
-background:red;
-color:white;
+background:linear-gradient(to right,#ff0000,#ffcc00);
+color:black;
+font-weight:700;
 font-size:16px;
-font-weight:bold;
 cursor:pointer;
 transition:0.3s;
 }
 
 .search-box button:hover{
-background:#ffcc00;
-color:black;
 transform:scale(1.05);
 }
 
-/* AI RESULT */
+/* RESULT */
 
 #aiResult{
-margin-top:30px;
-max-width:760px;
-padding:30px;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
-box-shadow:0 0 25px rgba(255,0,0,0.3);
 display:none;
+margin-top:35px;
+width:100%;
+max-width:900px;
+padding:35px;
+border-radius:30px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,204,0,0.25);
+box-shadow:0 0 30px rgba(255,0,0,0.35);
 text-align:left;
-animation:fade 0.5s ease;
+animation:fade 0.4s ease;
 }
 
 @keyframes fade{
@@ -190,14 +205,14 @@ transform:translateY(0);
 /* SECTION */
 
 .section{
-padding:100px 8%;
+padding:110px 8%;
 }
 
 .section-title{
+font-size:58px;
 text-align:center;
-font-size:55px;
-margin-bottom:50px;
 color:#ffcc00;
+margin-bottom:60px;
 text-shadow:0 0 20px red;
 }
 
@@ -205,18 +220,18 @@ text-shadow:0 0 20px red;
 
 .cards{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
+flex-wrap:wrap;
 gap:30px;
 }
 
 .card{
-width:300px;
+width:320px;
 padding:35px;
-border-radius:25px;
+border-radius:30px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(12px);
-border:2px solid rgba(255,204,0,0.2);
+border:1px solid rgba(255,204,0,0.15);
 transition:0.4s;
 }
 
@@ -228,46 +243,48 @@ box-shadow:
 }
 
 .card h3{
-color:#ffcc00;
-margin-bottom:15px;
 font-size:28px;
+margin-bottom:18px;
+color:#ffcc00;
 }
 
 .card p{
-line-height:1.7;
+line-height:1.9;
+color:#ddd;
 }
 
 /* CONTACT */
 
 .contact{
-padding:100px 20px;
+padding:110px 20px;
 text-align:center;
 }
 
 .contact h2{
-font-size:55px;
+font-size:58px;
 color:#ffcc00;
 margin-bottom:20px;
 }
 
 .contact p{
-font-size:20px;
+font-size:21px;
 margin-bottom:35px;
+color:#ddd;
 }
 
 .buttons{
 display:flex;
 justify-content:center;
-gap:20px;
+gap:22px;
 flex-wrap:wrap;
 }
 
 .buttons a{
-padding:18px 32px;
-border-radius:50px;
+padding:18px 34px;
+border-radius:60px;
 text-decoration:none;
-font-weight:bold;
 font-size:18px;
+font-weight:700;
 transition:0.3s;
 }
 
@@ -287,13 +304,21 @@ box-shadow:0 0 20px #25D366;
 transform:scale(1.08);
 }
 
+.address{
+margin-top:40px;
+font-size:19px;
+line-height:2;
+color:#ddd;
+}
+
 /* FOOTER */
 
 footer{
-padding:30px;
+padding:28px;
 text-align:center;
 background:black;
 color:#aaa;
+font-size:15px;
 }
 
 /* MOBILE */
@@ -301,7 +326,7 @@ color:#aaa;
 @media(max-width:768px){
 
 .hero h1{
-font-size:55px;
+font-size:52px;
 }
 
 .hero p{
@@ -312,26 +337,22 @@ nav{
 display:none;
 }
 
-.search-box input{
+.search-box{
+flex-direction:column;
+border-radius:30px;
+}
+
+.search-box button{
 width:100%;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
-
-<!-- VIDEO -->
-
-<video autoplay muted loop id="bgvideo">
-<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<!-- HEADER -->
 
 <header>
 
@@ -345,22 +366,22 @@ width:100%;
 
 </header>
 
-<!-- HERO -->
-
 <section class="hero">
 
 <h1>Shree Lakshmi & Co</h1>
 
 <p>
-Modern Iron & Steel Experience Powered by SLC AI
+Premium Iron & Steel Solutions with Smart SLC AI Search Technology
 </p>
+
+<div class="search-container">
 
 <div class="search-box">
 
 <input
 type="text"
 id="searchInput"
-placeholder="Search any material...">
+placeholder="Search materials like channel, beam, tmt bar, pipe, sheet...">
 
 <button onclick="searchAI()">
 Search
@@ -368,11 +389,11 @@ Search
 
 </div>
 
+</div>
+
 <div id="aiResult"></div>
 
 </section>
-
-<!-- ABOUT -->
 
 <section class="section" id="about">
 
@@ -383,31 +404,38 @@ Why Choose SLC?
 <div class="cards">
 
 <div class="card">
-<h3>Premium Steel</h3>
+
+<h3>Premium Materials</h3>
+
 <p>
-High quality iron and steel products for modern construction and industrial use.
+Top quality iron and steel products engineered for durability, strength and industrial performance.
 </p>
+
 </div>
 
 <div class="card">
-<h3>Fast Delivery</h3>
+
+<h3>Modern SLC AI</h3>
+
 <p>
-Quick transportation and trusted supply chain service.
+Search products instantly and learn sizes, features, uses and specifications using smart AI search.
 </p>
+
 </div>
 
 <div class="card">
-<h3>Modern Technology</h3>
+
+<h3>Trusted Supply</h3>
+
 <p>
-AI powered product support and smart customer experience.
+Reliable supply chain with fast delivery for residential, commercial and industrial projects.
 </p>
+
 </div>
 
 </div>
 
 </section>
-
-<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
@@ -422,22 +450,39 @@ Call or WhatsApp instantly for orders and enquiries.
 <a
 class="call"
 href="tel:+919841282311">
+
 📞 Call Now
+
 </a>
 
 <a
 class="whatsapp"
 href="https://wa.me/919841282311"
 target="_blank">
+
 💬 WhatsApp
+
 </a>
+
+</div>
+
+<div class="address">
+
+<b>Address:</b><br>
+
+Vaikund<br>
+11/10 108, Canal Bank Rd,<br>
+Rukmani Nagar, Adyar,<br>
+Chennai, Tamil Nadu 600020
 
 </div>
 
 </section>
 
 <footer>
+
 © 2026 SLC | Shree Lakshmi & Co
+
 </footer>
 
 <script>
@@ -445,230 +490,151 @@ target="_blank">
 const database = {
 
 "channel":{
-title:"Steel Channel",
-info:"Steel channels are used for construction frames, support structures and factories.",
+title:"Steel Channels",
+info:"Steel channels are structural profiles used in industrial frameworks, heavy buildings and machine structures.",
+sizes:"75mm × 40mm up to 400mm × 110mm",
 features:[
-"Strong load support",
-"Rust resistant",
-"Long lasting",
+"Strong structural support",
+"High load distribution",
 "Industrial strength",
-"Used in buildings"
+"Rust resistant",
+"Long lasting durability"
+],
+uses:[
+"Warehouse frames",
+"Bridges",
+"Building columns",
+"Vehicle chassis"
+]
+},
+
+"beam":{
+title:"Universal Beams",
+info:"Universal beams resist bending forces in buildings and bridges.",
+sizes:"127mm × 76mm up to 1016mm × 305mm",
+features:[
+"Heavy load capacity",
+"Strong bending resistance",
+"Construction grade",
+"Reliable support",
+"Long lifespan"
+],
+uses:[
+"High-rise buildings",
+"Flyovers",
+"Industrial structures"
+]
+},
+
+"angle":{
+title:"Steel Angles",
+info:"Steel angles are L-shaped structural profiles used in frames and supports.",
+sizes:"20mm × 20mm × 3mm up to 250mm × 250mm × 35mm",
+features:[
+"Strong corner support",
+"Easy fabrication",
+"High durability",
+"Industrial grade",
+"Long lasting"
+],
+uses:[
+"Roof trusses",
+"Cell towers",
+"Structural bracing"
 ]
 },
 
 "5mm rod":{
-title:"5MM Steel Rod",
-info:"5MM rods are used for reinforcement and small construction work.",
+title:"5MM Wire Rod",
+info:"5MM rods are smooth coiled steel rods used for reinforcement and manufacturing.",
+sizes:"5mm",
 features:[
 "Flexible usage",
 "Easy bending",
-"High durability",
-"Strong grip",
-"Construction ready"
+"Smooth finish",
+"High strength",
+"Durable steel"
+],
+uses:[
+"Nails",
+"Wire mesh",
+"Fencing",
+"Springs"
 ]
 },
 
 "6mm rod":{
-title:"6MM Steel Rod",
-info:"6MM rods are used in structural support and house construction.",
+title:"6MM TMT Rod",
+info:"6MM rods are reinforcement bars used for concrete structures.",
+sizes:"6mm",
 features:[
-"Weather resistant",
-"High strength",
-"Long lifespan",
-"Reliable quality",
-"Easy installation"
-]
-},
-
-"8mm rod":{
-title:"8MM Steel Rod",
-info:"8MM rods are used in slabs and reinforced concrete structures.",
-features:[
-"Strong reinforcement",
-"Durable material",
-"Construction grade",
-"High load capacity",
-"Corrosion resistant"
-]
-},
-
-"10mm rod":{
-title:"10MM Steel Rod",
-info:"10MM rods are used in beams and heavy structures.",
-features:[
-"Heavy duty support",
-"Excellent strength",
-"Long lasting",
-"Reliable structure",
-"Industrial quality"
-]
-},
-
-"12mm rod":{
-title:"12MM Steel Rod",
-info:"12MM rods are used in large construction projects.",
-features:[
-"Very high strength",
-"Supports heavy loads",
+"Concrete bonding ribs",
 "Corrosion resistant",
-"Premium quality",
-"Strong bonding"
-]
-},
-
-"16mm rod":{
-title:"16MM Steel Rod",
-info:"16MM rods are used in bridges and industrial foundations.",
-features:[
-"Maximum support",
-"Industrial grade",
-"Earthquake resistant",
-"Very durable",
-"Heavy construction ready"
+"Reliable support",
+"Construction ready",
+"High tensile strength"
+],
+uses:[
+"Home construction",
+"Concrete reinforcement",
+"Structural support"
 ]
 },
 
 "tmt bar":{
-title:"TMT Bar",
-info:"TMT bars are used in reinforced concrete structures like buildings and bridges.",
+title:"TMT Rebar",
+info:"TMT rebars are ribbed reinforcement bars engineered for strong concrete bonding.",
+sizes:"6mm to 50mm",
 features:[
 "Earthquake resistant",
 "Fire resistant",
 "High tensile strength",
 "Corrosion resistant",
-"Excellent bonding"
+"Excellent concrete bonding"
+],
+uses:[
+"Buildings",
+"Bridges",
+"Flyovers",
+"Towers"
 ]
 },
 
 "pipe":{
-title:"Steel Pipe",
-info:"Steel pipes are used in plumbing and industries.",
+title:"Steel Pipes",
+info:"Steel pipes are tubular products used for fluid transport and structures.",
+sizes:"1/8 inch to 26 inch",
 features:[
 "Leak resistant",
 "Heavy duty",
 "Smooth finish",
 "Long lasting",
 "Strong body"
+],
+uses:[
+"Water supply",
+"Gas pipelines",
+"Industrial transport",
+"Scaffolding"
 ]
 },
 
 "sheet":{
-title:"Steel Sheet",
-info:"Steel sheets are used in roofing and fabrication industries.",
+title:"Steel Sheets",
+info:"Steel sheets are flat products used in fabrication and manufacturing.",
+sizes:"0.3mm to 6mm",
 features:[
 "Smooth surface",
 "Easy cutting",
-"Weather protection",
-"Durable finish",
-"Industrial grade"
-]
-},
-
-"angle":{
-title:"Steel Angle",
-info:"Steel angles are used for frames and industrial supports.",
-features:[
-"Strong corner support",
-"Easy fabrication",
-"High durability",
-"Industrial use",
-"Long lasting"
-]
-},
-
-"beam":{
-title:"Steel Beam",
-info:"Steel beams are used in buildings and bridge construction.",
-features:[
-"Supports heavy loads",
-"Strong structure",
-"Long lifespan",
-"Industrial strength",
-"Reliable support"
-]
-},
-
-"plate":{
-title:"Steel Plate",
-info:"Steel plates are used in machinery and fabrication.",
-features:[
-"Heavy duty material",
-"High strength",
-"Durable finish",
-"Easy welding",
-"Industrial grade"
-]
-},
-
-"coil":{
-title:"Steel Coil",
-info:"Steel coils are used in roofing and manufacturing industries.",
-features:[
 "Flexible usage",
-"Smooth surface",
-"Easy transport",
 "Durable quality",
-"Factory ready"
-]
-},
-
-"wire":{
-title:"Steel Wire",
-info:"Steel wires are used in fencing and industrial applications.",
-features:[
-"Flexible material",
-"Strong tension",
-"Rust resistant",
-"Easy handling",
-"Long lasting"
-]
-},
-
-"cement":{
-title:"Cement",
-info:"Cement is used in concrete and building construction.",
-features:[
-"High bonding strength",
-"Smooth finish",
-"Reliable construction",
-"Weather resistant",
-"Strong foundation"
-]
-},
-
-"brick":{
-title:"Construction Brick",
-info:"Bricks are used for walls and building structures.",
-features:[
-"Strong material",
-"Heat resistant",
-"Durable structure",
-"Long lifespan",
-"Construction ready"
-]
-},
-
-"sand":{
-title:"Construction Sand",
-info:"Sand is used in plastering and construction mixing.",
-features:[
-"Smooth mixing",
-"Construction grade",
-"Reliable quality",
-"Easy usage",
-"Strong support"
-]
-},
-
-"gravel":{
-title:"Gravel Stone",
-info:"Gravel stones are used in roads and concrete mixing.",
-features:[
-"Strong support",
-"Water drainage",
-"Road construction",
-"Long lasting",
-"Heavy duty"
+"Industrial grade"
+],
+uses:[
+"Car bodies",
+"Roofing",
+"Furniture",
+"Containers"
 ]
 }
 
@@ -691,93 +657,70 @@ if(database[input]){
 let data = database[input];
 
 let featuresHTML = "";
+let usesHTML = "";
 
-data.features.forEach(function(feature){
+for(let i=0;i<data.features.length;i++){
 
-featuresHTML +=
-"<li>" + feature + "</li>";
+featuresHTML += "<li>" + data.features[i] + "</li>";
 
-});
+}
 
-result.innerHTML = `
+for(let i=0;i<data.uses.length;i++){
 
-<h2 style="
-color:#ffcc00;
-font-size:40px;
-margin-bottom:15px;
-">
-${data.title}
-</h2>
+usesHTML += "<li>" + data.uses[i] + "</li>";
 
-<p style="
-font-size:18px;
-line-height:1.8;
-margin-bottom:25px;
-">
-${data.info}
-</p>
+}
 
-<h3 style="
-color:red;
-margin-bottom:12px;
-font-size:26px;
-">
-Features
-</h3>
+result.innerHTML =
 
-<ul style="
-padding-left:25px;
-line-height:2;
-font-size:17px;
-">
-${featuresHTML}
-</ul>
+"<h2 style='color:#ffcc00;font-size:46px;margin-bottom:15px;'>" +
+data.title +
+"</h2>" +
 
-`;
+"<p style='font-size:19px;line-height:1.9;margin-bottom:20px;color:#ddd;'>" +
+data.info +
+"</p>" +
+
+"<h3 style='color:red;font-size:28px;margin-bottom:10px;'>Available Sizes</h3>" +
+
+"<p style='font-size:18px;margin-bottom:25px;color:#fff;'>" +
+data.sizes +
+"</p>" +
+
+"<h3 style='color:#ffcc00;font-size:28px;margin-bottom:10px;'>Features</h3>" +
+
+"<ul style='padding-left:25px;line-height:2;font-size:18px;margin-bottom:25px;'>" +
+featuresHTML +
+"</ul>" +
+
+"<h3 style='color:red;font-size:28px;margin-bottom:10px;'>Applications / Uses</h3>" +
+
+"<ul style='padding-left:25px;line-height:2;font-size:18px;'>" +
+usesHTML +
+"</ul>";
 
 }else{
 
-result.innerHTML = `
+result.innerHTML =
 
-<h2 style="color:#ffcc00;">
-SLC AI Assistant
-</h2>
+"<h2 style='color:#ffcc00;font-size:42px;'>SLC AI Assistant</h2>" +
 
-<p style="
-font-size:18px;
-line-height:1.8;
-margin-top:15px;
-">
+"<p style='margin-top:20px;font-size:18px;line-height:2;color:#ddd;'>" +
 
-Material not found.
+"Material not found.<br><br>" +
 
-Try searching:
+"Try searching:<br><br>" +
 
-<br><br>
+"• channel<br>" +
+"• beam<br>" +
+"• angle<br>" +
+"• 5mm rod<br>" +
+"• 6mm rod<br>" +
+"• tmt bar<br>" +
+"• pipe<br>" +
+"• sheet" +
 
-• channel<br>
-• 5mm rod<br>
-• 6mm rod<br>
-• 8mm rod<br>
-• 10mm rod<br>
-• 12mm rod<br>
-• 16mm rod<br>
-• tmt bar<br>
-• pipe<br>
-• sheet<br>
-• angle<br>
-• beam<br>
-• plate<br>
-• coil<br>
-• wire<br>
-• cement<br>
-• brick<br>
-• sand<br>
-• gravel
-
-</p>
-
-`;
+"</p>";
 
 }
 
