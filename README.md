@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
 
@@ -46,8 +45,8 @@ width:100%;
 height:100%;
 background:
 linear-gradient(
-rgba(0,0,0,0.7),
-rgba(50,0,0,0.82)
+rgba(0,0,0,0.72),
+rgba(60,0,0,0.82)
 );
 z-index:-1;
 }
@@ -64,13 +63,13 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(0,0,0,0.4);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 z-index:1000;
-border-bottom:1px solid rgba(255,204,0,0.15);
+border-bottom:1px solid rgba(255,204,0,0.2);
 }
 
 .logo{
-font-size:46px;
+font-size:48px;
 font-weight:800;
 color:#ffcc00;
 letter-spacing:2px;
@@ -78,18 +77,25 @@ animation:logoGlow 2s infinite alternate;
 }
 
 @keyframes logoGlow{
+
 from{
+
 text-shadow:
 0 0 10px #ffcc00,
 0 0 30px red;
+
 }
+
 to{
+
 text-shadow:
 0 0 20px #ffcc00,
 0 0 50px #ffcc00,
-0 0 90px red,
-0 0 140px red;
+0 0 100px red,
+0 0 160px red;
+
 }
+
 }
 
 nav{
@@ -106,6 +112,7 @@ transition:0.3s;
 
 nav a:hover{
 color:#ffcc00;
+text-shadow:0 0 10px #ffcc00;
 }
 
 /* HERO */
@@ -129,20 +136,29 @@ animation:heroGlow 2s infinite alternate;
 }
 
 @keyframes heroGlow{
+
 from{
+
 transform:translateY(0px);
+
 text-shadow:
 0 0 20px #ffcc00,
 0 0 40px red;
+
 }
+
 to{
+
 transform:translateY(-8px);
+
 text-shadow:
 0 0 30px #ffcc00,
 0 0 60px #ffcc00,
 0 0 120px red,
-0 0 180px red;
+0 0 200px red;
+
 }
+
 }
 
 .hero p{
@@ -165,10 +181,12 @@ border-radius:60px;
 padding:10px;
 backdrop-filter:blur(14px);
 border:1px solid rgba(255,204,0,0.2);
+
 box-shadow:
-0 0 25px rgba(255,204,0,0.25),
-0 0 50px rgba(255,0,0,0.3),
-0 0 100px rgba(255,0,0,0.2);
+0 0 30px rgba(255,204,0,0.25),
+0 0 60px rgba(255,0,0,0.35),
+0 0 120px rgba(255,0,0,0.2);
+
 }
 
 .searchBox input{
@@ -194,6 +212,11 @@ font-size:17px;
 font-weight:700;
 cursor:pointer;
 transition:0.3s;
+
+box-shadow:
+0 0 20px red,
+0 0 40px #ffcc00;
+
 }
 
 .searchBox button:hover{
@@ -212,80 +235,139 @@ border-radius:30px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(16px);
 border:1px solid rgba(255,204,0,0.2);
+
 box-shadow:
 0 0 30px rgba(255,204,0,0.2),
-0 0 60px rgba(255,0,0,0.35),
-0 0 120px rgba(255,0,0,0.2);
+0 0 70px rgba(255,0,0,0.35),
+0 0 130px rgba(255,0,0,0.2);
+
 animation:fade 0.4s ease;
 }
 
 @keyframes fade{
+
 from{
 opacity:0;
 transform:translateY(20px);
 }
+
 to{
 opacity:1;
 transform:translateY(0);
 }
+
 }
 
-/* CARDS */
+/* ABOUT SECTION */
+
+.about{
+padding:120px 8%;
+text-align:center;
+}
+
+.aboutTitle{
+font-size:68px;
+color:#ffcc00;
+margin-bottom:70px;
+
+text-shadow:
+0 0 20px #ffcc00,
+0 0 50px red,
+0 0 100px red;
+
+animation:aboutGlow 2s infinite alternate;
+}
+
+@keyframes aboutGlow{
+
+from{
+
+text-shadow:
+0 0 20px #ffcc00,
+0 0 50px red;
+
+}
+
+to{
+
+text-shadow:
+0 0 30px #ffcc00,
+0 0 70px #ffcc00,
+0 0 130px red,
+0 0 180px red;
+
+}
+
+}
 
 .cards{
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-gap:30px;
-padding:100px 8%;
+gap:35px;
 }
 
 .card{
 width:320px;
-padding:35px;
+padding:40px;
 border-radius:30px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(14px);
-border:1px solid rgba(255,204,0,0.12);
+border:1px solid rgba(255,204,0,0.15);
+
 transition:0.4s;
+
 box-shadow:
-0 0 20px rgba(255,204,0,0.1),
-0 0 40px rgba(255,0,0,0.1);
+0 0 20px rgba(255,204,0,0.15),
+0 0 50px rgba(255,0,0,0.15);
+
 }
 
 .card:hover{
-transform:translateY(-10px) scale(1.03);
+
+transform:translateY(-12px) scale(1.04);
+
 box-shadow:
 0 0 30px #ffcc00,
-0 0 70px red,
-0 0 130px red;
+0 0 80px red,
+0 0 150px red;
+
 }
 
 .card h2{
 color:#ffcc00;
-margin-bottom:18px;
+margin-bottom:20px;
 font-size:30px;
+
+text-shadow:
+0 0 10px #ffcc00,
+0 0 30px red;
+
 }
 
 .card p{
 line-height:1.9;
 color:#ddd;
+font-size:17px;
 }
 
 /* CONTACT */
 
 .contact{
-padding:110px 20px;
+padding:120px 20px;
 text-align:center;
 }
 
 .contact h2{
-font-size:60px;
+font-size:65px;
 color:#ffcc00;
 margin-bottom:20px;
+
 text-shadow:
 0 0 20px #ffcc00,
-0 0 50px red;
+0 0 60px red,
+0 0 120px red;
+
 }
 
 .contact p{
@@ -312,13 +394,21 @@ transition:0.3s;
 .call{
 background:red;
 color:white;
-box-shadow:0 0 25px red;
+
+box-shadow:
+0 0 20px red,
+0 0 50px red;
+
 }
 
 .whatsapp{
 background:#25D366;
 color:white;
-box-shadow:0 0 25px #25D366;
+
+box-shadow:
+0 0 20px #25D366,
+0 0 50px #25D366;
+
 }
 
 .buttons a:hover{
@@ -344,11 +434,19 @@ background:black;
 @media(max-width:768px){
 
 .hero h1{
-font-size:54px;
+font-size:55px;
 }
 
 .hero p{
 font-size:18px;
+}
+
+.aboutTitle{
+font-size:45px;
+}
+
+.contact h2{
+font-size:45px;
 }
 
 nav{
@@ -375,7 +473,9 @@ width:100%;
 <!-- VIDEO -->
 
 <video autoplay muted loop playsinline id="bgvideo">
+
 <source src="https://assets.mixkit.co/videos/preview/mixkit-industrial-smoke-coming-out-from-a-factory-1561-large.mp4" type="video/mp4">
+
 </video>
 
 <div class="overlay"></div>
@@ -387,9 +487,11 @@ width:100%;
 <div class="logo">SLC</div>
 
 <nav>
+
 <a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
+
 </nav>
 
 </header>
@@ -409,10 +511,12 @@ Premium Iron & Steel Solutions Powered by SLC AI Technology
 <input
 type="text"
 id="searchInput"
-placeholder="Search 9mm rod, channel, beam, pipe, gi sheet...">
+placeholder="Search 9mm rod, beam, channel, pipe, gi sheet...">
 
 <button onclick="searchMaterial()">
+
 Search
+
 </button>
 
 </div>
@@ -423,27 +527,44 @@ Search
 
 <!-- ABOUT -->
 
-<section class="cards" id="about">
+<section class="about" id="about">
+
+<h1 class="aboutTitle">
+Why Choose SLC?
+</h1>
+
+<div class="cards">
 
 <div class="card">
+
 <h2>Premium Steel</h2>
+
 <p>
-Industrial quality iron and steel materials for every construction project.
+Industrial quality iron and steel products with maximum durability and performance.
 </p>
+
 </div>
 
 <div class="card">
+
 <h2>SLC AI Search</h2>
+
 <p>
-Search materials instantly with sizes, features and applications.
+Search 50+ materials instantly with sizes, features and industrial applications.
 </p>
+
 </div>
 
 <div class="card">
+
 <h2>Trusted Supply</h2>
+
 <p>
-Reliable delivery and modern industrial steel solutions.
+Fast delivery, modern infrastructure and trusted steel distribution across projects.
 </p>
+
+</div>
+
 </div>
 
 </section>
@@ -491,7 +612,9 @@ Chennai, Tamil Nadu 600020
 </section>
 
 <footer>
+
 © 2026 SLC | Shree Lakshmi & Co
+
 </footer>
 
 <script>
@@ -519,22 +642,20 @@ features:[
 "High tensile strength",
 "Industrial grade steel",
 "Corrosion resistant",
-"Reliable support",
-"Heavy construction ready"
+"Heavy construction ready",
+"Reliable support"
 ],
 
 uses:[
 "Buildings",
 "Concrete reinforcement",
-"Industrial projects",
+"Industrial structures",
 "Structural support"
 ]
 
 };
 
 }
-
-/* EXTRA MATERIALS */
 
 Object.assign(materials,{
 
@@ -543,8 +664,8 @@ title:"Steel Channels",
 sizes:"75mm × 40mm to 400mm × 110mm",
 features:[
 "Strong structural support",
-"Heavy load distribution",
-"Industrial strength"
+"Industrial strength",
+"Heavy load distribution"
 ],
 uses:[
 "Frameworks",
@@ -557,44 +678,14 @@ uses:[
 title:"Universal Beams",
 sizes:"127mm × 76mm to 1016mm × 305mm",
 features:[
-"High bending resistance",
 "Heavy load support",
+"High bending resistance",
 "Industrial grade"
 ],
 uses:[
 "Bridges",
 "Steel buildings",
 "Industrial floors"
-]
-},
-
-"column":{
-title:"Universal Columns",
-sizes:"152mm × 152mm to 356mm × 406mm",
-features:[
-"Extreme vertical support",
-"Earthquake resistant",
-"Heavy duty"
-],
-uses:[
-"Building columns",
-"Industrial sheds",
-"Towers"
-]
-},
-
-"angle":{
-title:"Steel Angles",
-sizes:"20mm × 20mm to 250mm × 250mm",
-features:[
-"Strong corner support",
-"Easy fabrication",
-"High durability"
-],
-uses:[
-"Roof trusses",
-"Cell towers",
-"Structural framing"
 ]
 },
 
@@ -613,198 +704,33 @@ uses:[
 ]
 },
 
-"gi pipe":{
-title:"GI Pipes",
-sizes:"15mm to 300mm",
-features:[
-"Rust resistant",
-"Outdoor ready",
-"Strong piping"
-],
-uses:[
-"Handrails",
-"Water lines",
-"Scaffolding"
-]
-},
-
-"erw pipe":{
-title:"ERW Pipes",
-sizes:"15mm to 600mm",
-features:[
-"Strong welded joints",
-"Reliable quality",
-"Industrial grade"
-],
-uses:[
-"Irrigation",
-"Water lines",
-"Gas systems"
-]
-},
-
 "sheet":{
 title:"Steel Sheets",
 sizes:"0.3mm to 6mm",
 features:[
 "Smooth surface",
-"Easy cutting",
-"Industrial grade"
-],
-uses:[
-"Containers",
-"Roofing",
-"Furniture"
-]
-},
-
-"gi sheet":{
-title:"GI Sheets",
-sizes:"0.3mm to 3mm",
-features:[
-"Rust resistant",
-"Weather protection",
-"Strong zinc coating"
-],
-uses:[
-"Roofing",
-"Outdoor structures",
-"Air ducts"
-]
-},
-
-"ppgi sheet":{
-title:"PPGI Sheets",
-sizes:"0.3mm to 1mm",
-features:[
-"Color coated",
-"Heat resistant",
-"Modern appearance"
-],
-uses:[
-"Warehouse roofing",
-"Buildings",
-"Architectural facades"
-]
-},
-
-"plate":{
-title:"Steel Plates",
-sizes:"6mm to 300mm+",
-features:[
-"Heavy duty strength",
-"Impact resistant",
-"Industrial grade"
-],
-uses:[
-"Ship hulls",
-"Bridges",
-"Machinery beds"
-]
-},
-
-"checkered plate":{
-title:"Checkered Plates",
-sizes:"3mm to 12mm",
-features:[
-"Slip resistant",
-"Weather resistant",
-"Heavy duty"
-],
-uses:[
-"Industrial stairs",
-"Catwalks",
-"Ramps"
-]
-},
-
-"wire rod":{
-title:"Wire Rods",
-sizes:"5mm to 16mm",
-features:[
-"Flexible steel",
-"Smooth finish",
-"Industrial grade"
-],
-uses:[
-"Nails",
-"Springs",
-"Fencing mesh"
-]
-},
-
-"square bar":{
-title:"Square Bars",
-sizes:"8mm × 8mm to 100mm × 100mm",
-features:[
-"Solid steel body",
-"Strong structure",
-"Long lasting"
-],
-uses:[
-"Industrial grills",
-"Machinery components",
-"Forged tools"
-]
-},
-
-"flat bar":{
-title:"Flat Bars",
-sizes:"12mm to 300mm",
-features:[
-"Easy welding",
-"Strong support",
-"Durable steel"
-],
-uses:[
-"Brackets",
-"Structural joints",
-"Base plates"
-]
-},
-
-"hex bar":{
-title:"Hexagonal Bars",
-sizes:"6mm to 75mm",
-features:[
-"Precision finish",
-"Machining ready",
-"Strong material"
-],
-uses:[
-"Bolts",
-"Nuts",
-"Hydraulic fittings"
-]
-},
-
-"shs":{
-title:"Square Hollow Sections",
-sizes:"20mm × 20mm to 400mm × 400mm",
-features:[
-"Modern appearance",
-"Strong structure",
-"Architectural grade"
-],
-uses:[
-"Columns",
-"Frames",
-"Solar structures"
-]
-},
-
-"rhs":{
-title:"Rectangular Hollow Sections",
-sizes:"40mm × 20mm to 500mm × 300mm",
-features:[
-"High strength",
 "Industrial grade",
-"Reliable durability"
+"Easy cutting"
 ],
 uses:[
-"Trailers",
-"Trusses",
-"Mechanical structures"
+"Roofing",
+"Furniture",
+"Containers"
+]
+},
+
+"tmt bar":{
+title:"TMT Bars",
+sizes:"6mm to 50mm",
+features:[
+"Earthquake resistant",
+"Fire resistant",
+"Corrosion resistant"
+],
+uses:[
+"Buildings",
+"Bridges",
+"Flyovers"
 ]
 }
 
@@ -843,25 +769,33 @@ usesHTML += "<li>" + data.uses[i] + "</li>";
 result.innerHTML =
 
 "<h1 style='color:#ffcc00;font-size:50px;margin-bottom:20px;text-shadow:0 0 20px red;'>" +
+
 data.title +
+
 "</h1>" +
 
 "<h2 style='color:red;margin-bottom:15px;'>Available Sizes</h2>" +
 
 "<p style='font-size:20px;margin-bottom:25px;'>" +
+
 data.sizes +
+
 "</p>" +
 
 "<h2 style='color:#ffcc00;margin-bottom:15px;'>Features</h2>" +
 
 "<ul style='line-height:2;font-size:18px;padding-left:25px;margin-bottom:25px;'>" +
+
 featuresHTML +
+
 "</ul>" +
 
 "<h2 style='color:red;margin-bottom:15px;'>Applications / Uses</h2>" +
 
 "<ul style='line-height:2;font-size:18px;padding-left:25px;'>" +
+
 usesHTML +
+
 "</ul>";
 
 }else{
