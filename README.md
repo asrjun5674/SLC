@@ -16,6 +16,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -34,6 +35,7 @@ width:100%;
 height:100%;
 object-fit:cover;
 z-index:-2;
+filter:brightness(0.35);
 }
 
 .overlay{
@@ -42,7 +44,11 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.75);
+background:
+linear-gradient(
+rgba(0,0,0,0.7),
+rgba(50,0,0,0.82)
+);
 z-index:-1;
 }
 
@@ -58,15 +64,32 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 background:rgba(0,0,0,0.4);
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 z-index:1000;
+border-bottom:1px solid rgba(255,204,0,0.15);
 }
 
 .logo{
-font-size:42px;
+font-size:46px;
 font-weight:800;
 color:#ffcc00;
-text-shadow:0 0 20px red;
+letter-spacing:2px;
+animation:logoGlow 2s infinite alternate;
+}
+
+@keyframes logoGlow{
+from{
+text-shadow:
+0 0 10px #ffcc00,
+0 0 30px red;
+}
+to{
+text-shadow:
+0 0 20px #ffcc00,
+0 0 50px #ffcc00,
+0 0 90px red,
+0 0 140px red;
+}
 }
 
 nav{
@@ -75,9 +98,10 @@ gap:25px;
 }
 
 nav a{
-color:white;
 text-decoration:none;
+color:white;
 font-weight:600;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -93,40 +117,63 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:120px 20px;
+padding:130px 20px;
 }
 
 .hero h1{
-font-size:88px;
+font-size:92px;
+font-weight:800;
 color:#ffcc00;
+line-height:1.1;
+animation:heroGlow 2s infinite alternate;
+}
+
+@keyframes heroGlow{
+from{
+transform:translateY(0px);
 text-shadow:
 0 0 20px #ffcc00,
 0 0 40px red;
 }
+to{
+transform:translateY(-8px);
+text-shadow:
+0 0 30px #ffcc00,
+0 0 60px #ffcc00,
+0 0 120px red,
+0 0 180px red;
+}
+}
 
 .hero p{
+margin-top:25px;
 font-size:24px;
-margin-top:20px;
 max-width:900px;
 line-height:1.8;
+color:#ddd;
 }
 
 /* SEARCH */
 
 .searchBox{
-margin-top:40px;
+margin-top:45px;
 display:flex;
 width:100%;
-max-width:950px;
+max-width:1000px;
 background:rgba(255,255,255,0.08);
 border-radius:60px;
 padding:10px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,204,0,0.2);
+box-shadow:
+0 0 25px rgba(255,204,0,0.25),
+0 0 50px rgba(255,0,0,0.3),
+0 0 100px rgba(255,0,0,0.2);
 }
 
 .searchBox input{
 flex:1;
-padding:20px;
+padding:20px 24px;
 background:transparent;
 border:none;
 outline:none;
@@ -134,18 +181,23 @@ color:white;
 font-size:18px;
 }
 
+.searchBox input::placeholder{
+color:#ccc;
+}
+
 .searchBox button{
-padding:18px 35px;
+padding:18px 36px;
 border:none;
 border-radius:50px;
-background:linear-gradient(to right,red,#ffcc00);
+background:linear-gradient(to right,#ff0000,#ffcc00);
+font-size:17px;
 font-weight:700;
 cursor:pointer;
-font-size:17px;
+transition:0.3s;
 }
 
 .searchBox button:hover{
-transform:scale(1.04);
+transform:scale(1.05);
 }
 
 /* RESULT */
@@ -155,10 +207,27 @@ display:none;
 margin-top:40px;
 width:100%;
 max-width:1100px;
-background:rgba(255,255,255,0.08);
 padding:35px;
 border-radius:30px;
-backdrop-filter:blur(12px);
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(16px);
+border:1px solid rgba(255,204,0,0.2);
+box-shadow:
+0 0 30px rgba(255,204,0,0.2),
+0 0 60px rgba(255,0,0,0.35),
+0 0 120px rgba(255,0,0,0.2);
+animation:fade 0.4s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* CARDS */
@@ -174,31 +243,54 @@ padding:100px 8%;
 .card{
 width:320px;
 padding:35px;
-border-radius:25px;
+border-radius:30px;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
+border:1px solid rgba(255,204,0,0.12);
+transition:0.4s;
+box-shadow:
+0 0 20px rgba(255,204,0,0.1),
+0 0 40px rgba(255,0,0,0.1);
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:
+0 0 30px #ffcc00,
+0 0 70px red,
+0 0 130px red;
 }
 
 .card h2{
 color:#ffcc00;
-margin-bottom:15px;
+margin-bottom:18px;
+font-size:30px;
 }
 
 .card p{
-line-height:1.8;
+line-height:1.9;
+color:#ddd;
 }
 
 /* CONTACT */
 
 .contact{
-padding:100px 20px;
+padding:110px 20px;
 text-align:center;
 }
 
 .contact h2{
-font-size:55px;
+font-size:60px;
 color:#ffcc00;
-margin-bottom:25px;
+margin-bottom:20px;
+text-shadow:
+0 0 20px #ffcc00,
+0 0 50px red;
+}
+
+.contact p{
+font-size:21px;
+margin-bottom:35px;
 }
 
 .buttons{
@@ -206,37 +298,45 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin-top:30px;
 }
 
 .buttons a{
-padding:18px 32px;
+padding:18px 34px;
 border-radius:50px;
 text-decoration:none;
-font-weight:700;
 font-size:18px;
+font-weight:700;
+transition:0.3s;
 }
 
 .call{
 background:red;
 color:white;
+box-shadow:0 0 25px red;
 }
 
 .whatsapp{
 background:#25D366;
 color:white;
+box-shadow:0 0 25px #25D366;
+}
+
+.buttons a:hover{
+transform:scale(1.08);
 }
 
 .address{
 margin-top:40px;
 font-size:18px;
 line-height:2;
+color:#ddd;
 }
 
 footer{
 padding:30px;
 text-align:center;
 color:#aaa;
+background:black;
 }
 
 /* MOBILE */
@@ -244,7 +344,7 @@ color:#aaa;
 @media(max-width:768px){
 
 .hero h1{
-font-size:52px;
+font-size:54px;
 }
 
 .hero p{
@@ -275,7 +375,7 @@ width:100%;
 <!-- VIDEO -->
 
 <video autoplay muted loop playsinline id="bgvideo">
-<source src="https://cdn.coverr.co/videos/coverr-steel-factory-1560082031954?download=1080p" type="video/mp4">
+<source src="https://assets.mixkit.co/videos/preview/mixkit-industrial-smoke-coming-out-from-a-factory-1561-large.mp4" type="video/mp4">
 </video>
 
 <div class="overlay"></div>
@@ -309,7 +409,7 @@ Premium Iron & Steel Solutions Powered by SLC AI Technology
 <input
 type="text"
 id="searchInput"
-placeholder="Search 5mm rod, beam, pipe, gi sheet, tmt bar...">
+placeholder="Search 9mm rod, channel, beam, pipe, gi sheet...">
 
 <button onclick="searchMaterial()">
 Search
@@ -335,14 +435,14 @@ Industrial quality iron and steel materials for every construction project.
 <div class="card">
 <h2>SLC AI Search</h2>
 <p>
-Instant AI product search with features, applications and specifications.
+Search materials instantly with sizes, features and applications.
 </p>
 </div>
 
 <div class="card">
 <h2>Trusted Supply</h2>
 <p>
-Reliable supply chain with fast delivery and premium steel products.
+Reliable delivery and modern industrial steel solutions.
 </p>
 </div>
 
@@ -396,21 +496,60 @@ Chennai, Tamil Nadu 600020
 
 <script>
 
-const materials = {
+const materials = {};
+
+const sizes = [
+"5mm","6mm","7mm","8mm","9mm","10mm","11mm","12mm",
+"13mm","14mm","15mm","16mm","17mm","18mm","19mm","20mm",
+"21mm","22mm","23mm","24mm","25mm","26mm","27mm","28mm",
+"29mm","30mm","32mm","35mm","40mm","45mm","50mm"
+];
+
+for(let i=0;i<sizes.length;i++){
+
+let size = sizes[i];
+
+materials[size + " rod"] = {
+
+title:size + " Steel Rod",
+
+sizes:size,
+
+features:[
+"High tensile strength",
+"Industrial grade steel",
+"Corrosion resistant",
+"Reliable support",
+"Heavy construction ready"
+],
+
+uses:[
+"Buildings",
+"Concrete reinforcement",
+"Industrial projects",
+"Structural support"
+]
+
+};
+
+}
+
+/* EXTRA MATERIALS */
+
+Object.assign(materials,{
 
 "channel":{
 title:"Steel Channels",
 sizes:"75mm × 40mm to 400mm × 110mm",
 features:[
 "Strong structural support",
-"Superior load distribution",
-"Industrial strength",
-"Heavy construction ready"
+"Heavy load distribution",
+"Industrial strength"
 ],
 uses:[
-"Industrial frameworks",
-"Vehicle chassis",
-"Warehouse structures"
+"Frameworks",
+"Warehouses",
+"Vehicle chassis"
 ]
 },
 
@@ -420,10 +559,10 @@ sizes:"127mm × 76mm to 1016mm × 305mm",
 features:[
 "High bending resistance",
 "Heavy load support",
-"Industrial grade steel"
+"Industrial grade"
 ],
 uses:[
-"Bridge construction",
+"Bridges",
 "Steel buildings",
 "Industrial floors"
 ]
@@ -440,13 +579,13 @@ features:[
 uses:[
 "Building columns",
 "Industrial sheds",
-"Tower structures"
+"Towers"
 ]
 },
 
 "angle":{
 title:"Steel Angles",
-sizes:"20mm × 20mm × 3mm to 250mm × 250mm × 35mm",
+sizes:"20mm × 20mm to 250mm × 250mm",
 features:[
 "Strong corner support",
 "Easy fabrication",
@@ -456,186 +595,6 @@ uses:[
 "Roof trusses",
 "Cell towers",
 "Structural framing"
-]
-},
-
-"5mm rod":{
-title:"5MM Wire Rod",
-sizes:"5mm",
-features:[
-"Flexible material",
-"Easy bending",
-"Smooth finish"
-],
-uses:[
-"Nails",
-"Screws",
-"Wire mesh"
-]
-},
-
-"6mm rod":{
-title:"6MM TMT Rebar",
-sizes:"6mm",
-features:[
-"High tensile strength",
-"Corrosion resistant",
-"Concrete bonding"
-],
-uses:[
-"Buildings",
-"Structural support",
-"Concrete reinforcement"
-]
-},
-
-"8mm rod":{
-title:"8MM TMT Rebar",
-sizes:"8mm",
-features:[
-"Strong reinforcement",
-"Long lifespan",
-"Durable steel"
-],
-uses:[
-"Concrete slabs",
-"Columns",
-"Frames"
-]
-},
-
-"10mm rod":{
-title:"10MM TMT Rebar",
-sizes:"10mm",
-features:[
-"Heavy load support",
-"Reliable structure",
-"Industrial quality"
-],
-uses:[
-"Beams",
-"Columns",
-"Industrial projects"
-]
-},
-
-"12mm rod":{
-title:"12MM TMT Rebar",
-sizes:"12mm",
-features:[
-"Very strong support",
-"Corrosion resistant",
-"Heavy construction ready"
-],
-uses:[
-"Foundations",
-"Buildings",
-"Large structures"
-]
-},
-
-"16mm rod":{
-title:"16MM TMT Rebar",
-sizes:"16mm",
-features:[
-"Maximum strength",
-"Industrial grade",
-"Earthquake resistant"
-],
-uses:[
-"Bridges",
-"Industrial foundations",
-"High-rise buildings"
-]
-},
-
-"20mm rod":{
-title:"20MM TMT Rebar",
-sizes:"20mm",
-features:[
-"Ultra heavy support",
-"Premium steel",
-"High durability"
-],
-uses:[
-"Flyovers",
-"Massive buildings",
-"Industrial structures"
-]
-},
-
-"25mm rod":{
-title:"25MM TMT Rebar",
-sizes:"25mm",
-features:[
-"Extreme strength",
-"Heavy duty",
-"Reliable structure"
-],
-uses:[
-"Bridges",
-"Factories",
-"Large foundations"
-]
-},
-
-"32mm rod":{
-title:"32MM TMT Rebar",
-sizes:"32mm",
-features:[
-"Industrial grade",
-"Very high strength",
-"Premium steel"
-],
-uses:[
-"Industrial projects",
-"Large towers",
-"Heavy structures"
-]
-},
-
-"40mm rod":{
-title:"40MM TMT Rebar",
-sizes:"40mm",
-features:[
-"Extreme load capacity",
-"Heavy construction",
-"Long lifespan"
-],
-uses:[
-"Massive foundations",
-"Industrial plants",
-"Mega structures"
-]
-},
-
-"50mm rod":{
-title:"50MM TMT Rebar",
-sizes:"50mm",
-features:[
-"Maximum reinforcement",
-"Ultra strong steel",
-"Industrial strength"
-],
-uses:[
-"Dams",
-"Bridges",
-"Mega projects"
-]
-},
-
-"tmt bar":{
-title:"TMT Bars",
-sizes:"6mm to 50mm",
-features:[
-"Earthquake resistant",
-"Fire resistant",
-"Corrosion resistant"
-],
-uses:[
-"Buildings",
-"Flyovers",
-"Bridges"
 ]
 },
 
@@ -673,9 +632,9 @@ uses:[
 title:"ERW Pipes",
 sizes:"15mm to 600mm",
 features:[
-"Cost effective",
 "Strong welded joints",
-"Reliable quality"
+"Reliable quality",
+"Industrial grade"
 ],
 uses:[
 "Irrigation",
@@ -693,9 +652,9 @@ features:[
 "Industrial grade"
 ],
 uses:[
-"Car bodies",
-"Furniture",
-"Containers"
+"Containers",
+"Roofing",
+"Furniture"
 ]
 },
 
@@ -724,7 +683,7 @@ features:[
 ],
 uses:[
 "Warehouse roofing",
-"Modern buildings",
+"Buildings",
 "Architectural facades"
 ]
 },
@@ -791,7 +750,7 @@ uses:[
 
 "flat bar":{
 title:"Flat Bars",
-sizes:"12mm to 300mm width",
+sizes:"12mm to 300mm",
 features:[
 "Easy welding",
 "Strong support",
@@ -809,17 +768,47 @@ title:"Hexagonal Bars",
 sizes:"6mm to 75mm",
 features:[
 "Precision finish",
-"Strong material",
-"Machining ready"
+"Machining ready",
+"Strong material"
 ],
 uses:[
 "Bolts",
 "Nuts",
 "Hydraulic fittings"
 ]
+},
+
+"shs":{
+title:"Square Hollow Sections",
+sizes:"20mm × 20mm to 400mm × 400mm",
+features:[
+"Modern appearance",
+"Strong structure",
+"Architectural grade"
+],
+uses:[
+"Columns",
+"Frames",
+"Solar structures"
+]
+},
+
+"rhs":{
+title:"Rectangular Hollow Sections",
+sizes:"40mm × 20mm to 500mm × 300mm",
+features:[
+"High strength",
+"Industrial grade",
+"Reliable durability"
+],
+uses:[
+"Trailers",
+"Trusses",
+"Mechanical structures"
+]
 }
 
-};
+});
 
 function searchMaterial(){
 
@@ -853,11 +842,11 @@ usesHTML += "<li>" + data.uses[i] + "</li>";
 
 result.innerHTML =
 
-"<h1 style='color:#ffcc00;margin-bottom:20px;font-size:48px;'>" +
+"<h1 style='color:#ffcc00;font-size:50px;margin-bottom:20px;text-shadow:0 0 20px red;'>" +
 data.title +
 "</h1>" +
 
-"<h2 style='color:red;margin-bottom:15px;'>Sizes</h2>" +
+"<h2 style='color:red;margin-bottom:15px;'>Available Sizes</h2>" +
 
 "<p style='font-size:20px;margin-bottom:25px;'>" +
 data.sizes +
@@ -887,7 +876,7 @@ result.innerHTML =
 
 "Try searching:<br><br>" +
 
-Object.keys(materials).join("<br>• ");
+Object.keys(materials).map(x=>"• "+x).join("<br>");
 
 }
 
