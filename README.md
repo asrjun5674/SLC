@@ -7,7 +7,7 @@
 
 <title>SLC | Shree Lakshmi & Co</title>
 
-<meta name="description" content="Shree Lakshmi & Co - Modern Iron & Steel Solutions">
+<meta name="description" content="Premium Iron & Steel Solutions">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -27,21 +27,33 @@ color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* VIDEO BACKGROUND */
 
-body::before{
-content:"";
+#bgvideo{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+filter:brightness(0.25);
+}
+
+/* OVERLAY */
+
+.overlay{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
 background:
-linear-gradient(rgba(0,0,0,0.82),rgba(40,0,0,0.88)),
-url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
-z-index:-2;
+linear-gradient(
+rgba(0,0,0,0.82),
+rgba(50,0,0,0.88)
+);
+z-index:-1;
 }
 
 /* HEADER */
@@ -135,10 +147,10 @@ justify-content:center;
 
 .search-box{
 width:100%;
-max-width:820px;
+max-width:950px;
 display:flex;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 border-radius:60px;
 padding:10px;
 box-shadow:0 0 25px rgba(255,0,0,0.25);
@@ -146,7 +158,7 @@ box-shadow:0 0 25px rgba(255,0,0,0.25);
 
 .search-box input{
 flex:1;
-padding:18px 22px;
+padding:20px 24px;
 border:none;
 outline:none;
 background:transparent;
@@ -180,7 +192,7 @@ transform:scale(1.05);
 display:none;
 margin-top:35px;
 width:100%;
-max-width:900px;
+max-width:1050px;
 padding:35px;
 border-radius:30px;
 background:rgba(255,255,255,0.08);
@@ -202,7 +214,7 @@ transform:translateY(0);
 }
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:110px 8%;
@@ -354,6 +366,16 @@ width:100%;
 
 <body>
 
+<!-- VIDEO -->
+
+<video autoplay muted loop playsinline id="bgvideo">
+<source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<!-- HEADER -->
+
 <header>
 
 <div class="logo">SLC</div>
@@ -366,12 +388,14 @@ width:100%;
 
 </header>
 
+<!-- HERO -->
+
 <section class="hero">
 
 <h1>Shree Lakshmi & Co</h1>
 
 <p>
-Premium Iron & Steel Solutions with Smart SLC AI Search Technology
+Premium Iron & Steel Solutions Powered by SLC AI Search Technology
 </p>
 
 <div class="search-container">
@@ -381,7 +405,7 @@ Premium Iron & Steel Solutions with Smart SLC AI Search Technology
 <input
 type="text"
 id="searchInput"
-placeholder="Search materials like channel, beam, tmt bar, pipe, sheet...">
+placeholder="Search channel, beam, tmt bar, pipe, gi sheet...">
 
 <button onclick="searchAI()">
 Search
@@ -395,6 +419,8 @@ Search
 
 </section>
 
+<!-- ABOUT -->
+
 <section class="section" id="about">
 
 <h2 class="section-title">
@@ -404,38 +430,31 @@ Why Choose SLC?
 <div class="cards">
 
 <div class="card">
-
-<h3>Premium Materials</h3>
-
+<h3>Premium Steel</h3>
 <p>
-Top quality iron and steel products engineered for durability, strength and industrial performance.
+High quality iron and steel products for construction and industrial projects.
 </p>
-
 </div>
 
 <div class="card">
-
-<h3>Modern SLC AI</h3>
-
+<h3>SLC AI Search</h3>
 <p>
-Search products instantly and learn sizes, features, uses and specifications using smart AI search.
+Search materials instantly and view sizes, features and industrial applications.
 </p>
-
 </div>
 
 <div class="card">
-
 <h3>Trusted Supply</h3>
-
 <p>
-Reliable supply chain with fast delivery for residential, commercial and industrial projects.
+Reliable supply chain with fast delivery for commercial and industrial requirements.
 </p>
-
 </div>
 
 </div>
 
 </section>
+
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
@@ -480,9 +499,7 @@ Chennai, Tamil Nadu 600020
 </section>
 
 <footer>
-
 © 2026 SLC | Shree Lakshmi & Co
-
 </footer>
 
 <script>
@@ -491,91 +508,104 @@ const database = {
 
 "channel":{
 title:"Steel Channels",
-info:"Steel channels are structural profiles used in industrial frameworks, heavy buildings and machine structures.",
+info:"Steel channels are structural profiles used in industrial frameworks and heavy buildings.",
 sizes:"75mm × 40mm up to 400mm × 110mm",
 features:[
 "Strong structural support",
-"High load distribution",
+"Superior load distribution",
 "Industrial strength",
 "Rust resistant",
-"Long lasting durability"
+"Heavy construction ready"
 ],
 uses:[
-"Warehouse frames",
-"Bridges",
+"Industrial frameworks",
+"Vehicle chassis",
 "Building columns",
-"Vehicle chassis"
+"Warehouse structures"
 ]
 },
 
 "beam":{
 title:"Universal Beams",
-info:"Universal beams resist bending forces in buildings and bridges.",
+info:"Universal beams resist heavy bending forces in industrial buildings and bridges.",
 sizes:"127mm × 76mm up to 1016mm × 305mm",
 features:[
+"High bending resistance",
 "Heavy load capacity",
-"Strong bending resistance",
-"Construction grade",
 "Reliable support",
-"Long lifespan"
+"Construction grade steel"
 ],
 uses:[
-"High-rise buildings",
-"Flyovers",
-"Industrial structures"
+"Bridge construction",
+"Industrial buildings",
+"Steel floors"
+]
+},
+
+"column":{
+title:"Universal Columns",
+info:"Universal columns are thick steel sections designed for massive vertical loads.",
+sizes:"152mm × 152mm up to 356mm × 406mm",
+features:[
+"Extreme vertical support",
+"Heavy duty structure",
+"Earthquake resistant",
+"Industrial strength"
+],
+uses:[
+"Building columns",
+"Industrial sheds",
+"Warehouse supports"
 ]
 },
 
 "angle":{
 title:"Steel Angles",
-info:"Steel angles are L-shaped structural profiles used in frames and supports.",
+info:"Steel angles are L-shaped structural sections used in framing systems.",
 sizes:"20mm × 20mm × 3mm up to 250mm × 250mm × 35mm",
 features:[
 "Strong corner support",
 "Easy fabrication",
 "High durability",
-"Industrial grade",
-"Long lasting"
+"Industrial quality"
 ],
 uses:[
 "Roof trusses",
 "Cell towers",
-"Structural bracing"
+"Structural framing"
 ]
 },
 
 "5mm rod":{
 title:"5MM Wire Rod",
-info:"5MM rods are smooth coiled steel rods used for reinforcement and manufacturing.",
+info:"5MM smooth steel rods are used for manufacturing steel products.",
 sizes:"5mm",
 features:[
-"Flexible usage",
-"Easy bending",
+"Flexible material",
 "Smooth finish",
-"High strength",
-"Durable steel"
+"Easy bending",
+"High durability"
 ],
 uses:[
 "Nails",
+"Screws",
 "Wire mesh",
-"Fencing",
-"Springs"
+"Fencing"
 ]
 },
 
 "6mm rod":{
-title:"6MM TMT Rod",
-info:"6MM rods are reinforcement bars used for concrete structures.",
+title:"6MM TMT Rebar",
+info:"6MM rebars are reinforcement bars engineered for concrete bonding.",
 sizes:"6mm",
 features:[
 "Concrete bonding ribs",
+"High tensile strength",
 "Corrosion resistant",
-"Reliable support",
-"Construction ready",
-"High tensile strength"
+"Construction ready"
 ],
 uses:[
-"Home construction",
+"Buildings",
 "Concrete reinforcement",
 "Structural support"
 ]
@@ -583,58 +613,102 @@ uses:[
 
 "tmt bar":{
 title:"TMT Rebar",
-info:"TMT rebars are ribbed reinforcement bars engineered for strong concrete bonding.",
+info:"TMT rebars are deformed reinforcement bars engineered for concrete bonding.",
 sizes:"6mm to 50mm",
 features:[
 "Earthquake resistant",
 "Fire resistant",
 "High tensile strength",
-"Corrosion resistant",
-"Excellent concrete bonding"
+"Corrosion resistant"
 ],
 uses:[
 "Buildings",
-"Bridges",
 "Flyovers",
+"Bridges",
 "Towers"
-]
-},
-
-"pipe":{
-title:"Steel Pipes",
-info:"Steel pipes are tubular products used for fluid transport and structures.",
-sizes:"1/8 inch to 26 inch",
-features:[
-"Leak resistant",
-"Heavy duty",
-"Smooth finish",
-"Long lasting",
-"Strong body"
-],
-uses:[
-"Water supply",
-"Gas pipelines",
-"Industrial transport",
-"Scaffolding"
 ]
 },
 
 "sheet":{
 title:"Steel Sheets",
-info:"Steel sheets are flat products used in fabrication and manufacturing.",
+info:"Steel sheets are flat rolled products used in manufacturing.",
 sizes:"0.3mm to 6mm",
 features:[
 "Smooth surface",
 "Easy cutting",
-"Flexible usage",
-"Durable quality",
-"Industrial grade"
+"Industrial grade",
+"Durable quality"
 ],
 uses:[
 "Car bodies",
-"Roofing",
 "Furniture",
-"Containers"
+"Containers",
+"Roofing"
+]
+},
+
+"gi sheet":{
+title:"GI Sheets",
+info:"Galvanized iron sheets are zinc coated for rust resistance.",
+sizes:"0.3mm to 3mm",
+features:[
+"Rust resistant",
+"Weather protection",
+"Strong zinc coating"
+],
+uses:[
+"Roofing",
+"Outdoor structures",
+"Air ducts"
+]
+},
+
+"pipe":{
+title:"Steel Pipes",
+info:"Steel pipes are tubular products used for transport and structures.",
+sizes:"1/8 inch to 26 inch",
+features:[
+"Leak resistant",
+"Heavy duty",
+"Smooth finish",
+"Long lasting"
+],
+uses:[
+"Water supply",
+"Gas pipelines",
+"Industrial transport"
+]
+},
+
+"shs":{
+title:"Square Hollow Sections",
+info:"SHS are square hollow steel sections used in structures.",
+sizes:"20mm × 20mm to 400mm × 400mm",
+features:[
+"Modern appearance",
+"Strong structure",
+"Architectural grade"
+],
+uses:[
+"Columns",
+"Architectural frames",
+"Solar structures"
+]
+},
+
+"rhs":{
+title:"Rectangular Hollow Sections",
+info:"RHS are rectangular hollow steel sections used in trusses and trailers.",
+sizes:"40mm × 20mm to 500mm × 300mm",
+features:[
+"High strength",
+"Industrial grade",
+"Reliable durability"
+],
+uses:[
+"Trailers",
+"Trusses",
+"Mechanical structures"
 ]
 }
 
@@ -643,11 +717,7 @@ uses:[
 function searchAI(){
 
 let input =
-document
-.getElementById("searchInput")
-.value
-.toLowerCase()
-.trim();
+document.getElementById("searchInput").value.toLowerCase().trim();
 
 let result =
 document.getElementById("aiResult");
@@ -713,12 +783,16 @@ result.innerHTML =
 
 "• channel<br>" +
 "• beam<br>" +
+"• column<br>" +
 "• angle<br>" +
 "• 5mm rod<br>" +
 "• 6mm rod<br>" +
 "• tmt bar<br>" +
+"• sheet<br>" +
+"• gi sheet<br>" +
 "• pipe<br>" +
-"• sheet" +
+"• shs<br>" +
+"• rhs" +
 
 "</p>";
 
@@ -732,4 +806,3 @@ result.style.display = "block";
 
 </body>
 </html>
-```
